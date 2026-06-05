@@ -11,6 +11,7 @@ import AdminRoute from './components/common/AdminRoute';
 // Pages
 import LoginPage from './pages/auth/LoginPage';
 import SignupPage from './pages/auth/SignupPage';
+import VerifyOtpPage from './pages/auth/VerifyOtpPage';
 import MenuPage from './pages/customer/MenuPage';
 import CartPage from './pages/customer/CartPage';
 import CheckoutPage from './pages/customer/CheckoutPage';
@@ -32,6 +33,7 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/verify-otp" element={<VerifyOtpPage />} />
 
             {/* Customer Private Routes */}
             <Route

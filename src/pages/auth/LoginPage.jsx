@@ -46,7 +46,17 @@ export const LoginPage = () => {
     try {
       const response = await apiLogin({ email, password });
       
-      // Update global context
+      if (response.otpRequired) {
+        navigate('/verify-otp', {
+          state: {
+            email: response.email,
+            from: from
+          }
+        });
+        return;
+      }
+      
+      // Update global context (Fallback if OTP is bypassed)
       login(response.user, response.token);
       
       // Redirect based on role

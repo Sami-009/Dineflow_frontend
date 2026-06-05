@@ -19,7 +19,27 @@ export const login = async (data) => {
   return response.data;
 };
 
+/**
+ * Verify login OTP
+ * @param {object} data - { email, otp }
+ */
+export const verifyOtp = async (data) => {
+  const response = await api.post('/auth/verify-otp', data);
+  return response.data;
+};
+
+/**
+ * Resend login OTP
+ * @param {object} data - { email }
+ */
+export const resendOtp = async (data) => {
+  const response = await api.post('/auth/resend-otp', data);
+  return response.data;
+};
+
 export default {
   signup,
   login,
+  verifyOtp,
+  resendOtp,
 };
