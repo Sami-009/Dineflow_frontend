@@ -27,7 +27,7 @@ export const LoginPage = () => {
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = 'Please enter a valid email address.';
     }
-    
+
     if (!password) {
       newErrors.password = 'Password is required.';
     }
@@ -42,10 +42,10 @@ export const LoginPage = () => {
 
     setLoading(true);
     setErrorMessage('');
-    
+
     try {
       const response = await apiLogin({ email, password });
-      
+
       if (response.otpRequired) {
         navigate('/verify-otp', {
           state: {
@@ -55,10 +55,10 @@ export const LoginPage = () => {
         });
         return;
       }
-      
+
       // Update global context (Fallback if OTP is bypassed)
       login(response.user, response.token);
-      
+
       // Redirect based on role
       if (response.user.role === 'admin') {
         navigate('/admin', { replace: true });
@@ -121,11 +121,10 @@ export const LoginPage = () => {
                       if (errors.email) setErrors((p) => ({ ...p, email: '' }));
                     }}
                     placeholder="e.g. customer@dineflow.com"
-                    className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${
-                      errors.email
+                    className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.email
                         ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
                         : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
-                    }`}
+                      }`}
                   />
                 </div>
                 {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
@@ -149,11 +148,10 @@ export const LoginPage = () => {
                       if (errors.password) setErrors((p) => ({ ...p, password: '' }));
                     }}
                     placeholder="••••••••"
-                    className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${
-                      errors.password
+                    className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.password
                         ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
                         : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
-                    }`}
+                      }`}
                   />
                 </div>
                 {errors.password && <p className="mt-1 text-xs text-red-600">{errors.password}</p>}
@@ -183,14 +181,6 @@ export const LoginPage = () => {
                 </button>
               </div>
             </form>
-
-            <div className="mt-6 border-t border-gray-100 pt-6">
-              <div className="bg-gray-50 border border-gray-100 rounded-xl p-4 text-[11px] text-gray-500 leading-normal space-y-1">
-                <p className="font-semibold text-gray-700">Quick Test Credentials:</p>
-                <p>🔑 <span className="font-semibold text-gray-600">Admin:</span> admin@dineflow.com | admin123</p>
-                <p>🔑 <span className="font-semibold text-gray-600">Customer:</span> customer@dineflow.com | customer123</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
