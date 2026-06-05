@@ -19,7 +19,7 @@ export const CheckoutPage = () => {
   const [deliveryErrors, setDeliveryErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  
+
   const navigate = useNavigate();
 
   // Guard route in code as well
@@ -58,7 +58,7 @@ export const CheckoutPage = () => {
 
     setLoading(true);
     setErrorMessage('');
-    
+
     // Prepare items payload format expected by the backend
     const itemsPayload = cartItems.map((item) => ({
       id: item.id,
@@ -77,13 +77,13 @@ export const CheckoutPage = () => {
         },
         token
       );
-      
+
       // Copy cart items snapshot for confirmation details display before clearing
       const cartSnapshot = [...cartItems];
-      
+
       // Clear shopping cart state
       clearCart();
-      
+
       // Redirect to confirmation screen passing order details
       navigate('/confirmation', {
         state: {
@@ -144,11 +144,10 @@ export const CheckoutPage = () => {
                     }}
                     rows={3}
                     placeholder="e.g. 123 Maple Street, Apt 4B"
-                    className={`block w-full pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${
-                      deliveryErrors.deliveryAddress
+                    className={`block w-full pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${deliveryErrors.deliveryAddress
                         ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
                         : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
-                    }`}
+                      }`}
                   />
                   {deliveryErrors.deliveryAddress && <p className="mt-1 text-xs text-red-600">{deliveryErrors.deliveryAddress}</p>}
                 </div>
@@ -164,12 +163,11 @@ export const CheckoutPage = () => {
                       }
                     }}
                     type="text"
-                    placeholder="e.g. Foodtown"
-                    className={`block w-full pl-3 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${
-                      deliveryErrors.deliveryCity
+                    placeholder="e.g. Islamabad"
+                    className={`block w-full pl-3 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${deliveryErrors.deliveryCity
                         ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
                         : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
-                    }`}
+                      }`}
                   />
                   {deliveryErrors.deliveryCity && <p className="mt-1 text-xs text-red-600">{deliveryErrors.deliveryCity}</p>}
                 </div>
@@ -179,15 +177,14 @@ export const CheckoutPage = () => {
             {/* Payment Method Selector */}
             <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm space-y-4">
               <h3 className="text-sm font-bold text-gray-900">Select Payment Method</h3>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Cash option */}
                 <label
-                  className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all duration-300 ${
-                    paymentMethod === 'Cash'
+                  className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all duration-300 ${paymentMethod === 'Cash'
                       ? 'border-orange-500 bg-orange-50/20 ring-2 ring-orange-50'
                       : 'border-gray-200 hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center space-x-3">
                     <div className={`p-2 rounded-lg ${paymentMethod === 'Cash' ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-500'}`}>
@@ -210,11 +207,10 @@ export const CheckoutPage = () => {
 
                 {/* Card option */}
                 <label
-                  className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all duration-300 ${
-                    paymentMethod === 'Card'
+                  className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-all duration-300 ${paymentMethod === 'Card'
                       ? 'border-orange-500 bg-orange-50/20 ring-2 ring-orange-50'
                       : 'border-gray-200 hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center space-x-3">
                     <div className={`p-2 rounded-lg ${paymentMethod === 'Card' ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-500'}`}>
@@ -236,7 +232,7 @@ export const CheckoutPage = () => {
                 </label>
               </div>
             </div>
-            
+
             {/* Confirm order button */}
             <button
               onClick={handleConfirmOrder}

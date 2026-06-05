@@ -142,10 +142,10 @@ export const SignupPage = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="e.g. John Doe"
+                        placeholder="e.g. Sami ullah"
                         className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.name
-                            ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
-                            : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
+                          ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
+                          : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
                           }`}
                       />
                     </div>
@@ -168,8 +168,8 @@ export const SignupPage = () => {
                         onChange={handleChange}
                         placeholder="e.g. customer@dineflow.com"
                         className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.email
-                            ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
-                            : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
+                          ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
+                          : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
                           }`}
                       />
                     </div>
@@ -192,8 +192,8 @@ export const SignupPage = () => {
                         onChange={handleChange}
                         placeholder="••••••••"
                         className={`block w-full pl-10 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.password
-                            ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
-                            : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
+                          ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
+                          : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
                           }`}
                       />
                     </div>
@@ -232,8 +232,8 @@ export const SignupPage = () => {
                       onChange={handleChange}
                       rows={3}
                       className={`block w-full pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.address
-                          ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
-                          : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
+                        ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
+                        : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
                         }`}
                     />
                     {errors.address && <p className="mt-1 text-xs text-red-600">{errors.address}</p>}
@@ -249,10 +249,10 @@ export const SignupPage = () => {
                       name="city"
                       value={formData.city}
                       onChange={handleChange}
-                      placeholder="e.g. Foodtown"
+                      placeholder="e.g. Islamabad"
                       className={`block w-full pl-3 pr-3 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 ${errors.city
-                          ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
-                          : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
+                        ? 'border-red-300 focus:ring-red-100 focus:border-red-500'
+                        : 'border-gray-200 focus:ring-orange-100 focus:border-orange-500'
                         }`}
                     />
                     {errors.city && <p className="mt-1 text-xs text-red-600">{errors.city}</p>}
